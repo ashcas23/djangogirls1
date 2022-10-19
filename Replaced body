@@ -1,0 +1,17 @@
+{% for post in posts %}
+    <article class="post">
+        <time class="date">
+            {{ post.published_date }}
+        </time>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </article>
+{% endfor %}
+
+{% for post in posts %}
+    <article>
+      <time>published: 09.28.2022, 09:04</time>
+      <h2><a href="">My second post</a></h2>
+      <p>Welcome back, here is my second post of the day! Glad you all came back and if you want any suggestions on what I should write please shoot me an email anytime!</p>
+{% endfor %}
+</body>
