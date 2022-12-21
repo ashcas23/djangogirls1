@@ -53,10 +53,19 @@ h4 {
     margin-right: 20px;
 }
 
-.post {
+article.post {
   background-color: #bad9e5;
   margin-bottom: 70px;
   border: 1px solid #2d82b9;
+  width: 400px;
+  height: 85%;
+}
+
+.post-container {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  grid-gap: 19px;
+  gap: 19px;
 }
 
 .post_detail {
@@ -65,8 +74,9 @@ h4 {
 }
 
 .postimage {
-    width: 300px;
+    width: 400px;
     height: 200px;
+    border: 4px solid #2d82b9
 }
 
 .post h2 a,
