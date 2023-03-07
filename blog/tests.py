@@ -123,7 +123,7 @@ class PostEditTest(TestCase):
             self.assertEqual(published_post.text, "new text")
 
         def test_post_unpublished(self):
-            """If post in unpublished user should not be able to edit it sucessfully"""
+            """If post is unpublished user should not be able to edit it sucessfully"""
             author = User.objects.create(username = "user1")
             unpublished_post = Post.objects.create(title = "Post02", text = "Great", author = author)
             response = self.client.post(f"/post/{unpublished_post.pk}/edit/", {"title": "new title", "text": "new text"})
