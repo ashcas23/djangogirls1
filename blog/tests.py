@@ -143,6 +143,13 @@ class PostEditTest(TestCase):
             response = self.client.post(f"/post/{unpublished_post.pk}/edit/")
             self.assertEqual(response.status_code, 404)
 
+        def test_post_doesnotexist(self):
+            """If post doest not exist user should not be able to edit posts"""
+            response = self.client.post(f"/post/1000000/edit/")
+            self.assertEqual(response.status_code, 404)
+            response = self.client.post(f"/post/!!!!!/edit/")
+            self.assertEqual(response.status_code, 404)
+
 class PostNewTest(TestCase):
 
         def setUp(self): #setting up username and password for every tests
@@ -174,3 +181,16 @@ class PostNewTest(TestCase):
             self.assertEqual(response.status_code, 404)
             response = self.client.post('/post/new/', {"title": "new title", "text": "new text"})
             self.assertEqual(response.status_code, 404)
+
+        def test_post_sametitle(self):
+            """If user creates another post with same title they should be able to create new posts"""
+            response = self.client.post('/post/new/')
+            author = User.objects.create (username = "hello_there101")
+            published_post = Post.objects.create(title = "Post1", text = "Post 1 data", author = author, published_date = now())
+            response = self.client.post('/post/new/', {"title": "Post1", "text": "Great"})
+            self.assertEqual(response.context["form"].errors, {"__all__": ["Post already has existing title"]})
+            self.assertEqual(response.status_code, 200)
+            unpublished_post = Post.objects.create(title = "Post02", text = "Great", author = author)
+            rresponse = self.client.post('/post/new/', {"title": "Post2", "text": "Great"})
+            self.assertEqual(response.context["form"].errors, {"__all__": ["Post already has existing title"]})
+            self.assertEqual(response.status_code, 200)
