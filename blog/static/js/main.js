@@ -23,3 +23,11 @@ function changeTitleColor() {
 
 let ChangeColorofMainTitle = document.getElementById("ChangeColorofMainTitle");
 ChangeColorofMainTitle.addEventListener("click", changeTitleColor);
+
+let ScrollToTopButton = document.getElementById("ScrollToTopButton");
+
+function ScrollToTopFunction() {
+  let title = document.getElementById("titlelink");
+  title.scrollIntoView({ behavior:"smooth", block: "center"});
+}
+ScrollToTopButton.addEventListener("click", ScrollToTopFunction);
