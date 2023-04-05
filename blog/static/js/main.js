@@ -1,4 +1,4 @@
-function ChangeColorofPostTitles() { //defining a (python) function
+function ChangeColorofPostTitles() { //defining a (JavaScript) function
   let elements_posttitles = document.getElementsByClassName("posttitle");
 
   for (element of elements_posttitles){
