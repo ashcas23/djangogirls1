@@ -1,7 +1,7 @@
 function ChangeColorofPostTitles() { //defining a (JavaScript) function
   let elements_posttitles = document.getElementsByClassName("posttitle");
 
-  for (element of elements_posttitles){
+  for (element of elements_posttitles){ //the loop serves as a random color generator each time the button on the blog is pressed
     let colors = ["red", "green", "purple", "yellow", "orange"]
     let randomColor = colors[Math.floor(Math.random() * colors.length)]
     element.style["color"] = randomColor;
