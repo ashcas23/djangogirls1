@@ -33,7 +33,7 @@ function ScrollToTopFunction() {
 ScrollToTopButton.addEventListener("click", ScrollToTopFunction);
 
 function ScrollToBottomFunction() {
-  let ScrollToTopButton = document.getElementById("ScrollToTopButton"); //make sure to change names of titles 
-  ScrollToTopButton.scrollIntoView({ behavior:"smooth", block: "center"});
+  let ScrollToTopButton = document.getElementById("ScrollToTopButton"); //we input the code to find the ScrollToTopButton when pressing the ScrollToBottomFunction in order for the page to go to where the ScrollToTopButton is located
+  ScrollToTopButton.scrollIntoView({ behavior:"smooth", block: "center"}); //make sure to change name of the titles
 }
 ScrollToBottomButton.addEventListener("click", ScrollToBottomFunction);
