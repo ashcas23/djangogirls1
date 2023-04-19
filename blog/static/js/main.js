@@ -31,3 +31,9 @@ function ScrollToTopFunction() {
   title.scrollIntoView({ behavior:"smooth", block: "center"});
 }
 ScrollToTopButton.addEventListener("click", ScrollToTopFunction);
+
+function ScrollToBottomFunction() {
+  let ScrollToTopButton = document.getElementById("ScrollToTopButton"); //make sure to change names of titles 
+  ScrollToTopButton.scrollIntoView({ behavior:"smooth", block: "center"});
+}
+ScrollToBottomButton.addEventListener("click", ScrollToBottomFunction);
