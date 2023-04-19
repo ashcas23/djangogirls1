@@ -15,7 +15,8 @@
                   {% include './icons/file-earmark-plus.svg' %}
                 </a>
             {% endif %}
-                <h1><a href="/">Django Girls Blog</a></h1>
+                <h1><a id="titlelink" href="/">Django Girls Blog</a></h1>
+                  <button id= "ScrollToBottomButton" class = "btn btn-secondary whitetext">ScrollToBottom</button>  
               </div>
           </header>
         <main class="container">
@@ -25,6 +26,9 @@
                 {% endblock %}
                 </div>
             </div>
+                {% block nextsection %}
+                {% endblock %}
         </main>
+        <script type="text/javascript" src="{% static 'js/main.js' %}"></script> <!--you are loading a script for main.js-->
       </body>
 </html>

@@ -7,8 +7,16 @@
                   <time class="09-28-2022"
                       {{ post.published_date }}
                   </time>
-                  <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+                  <h2><a class="posttitle" href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
                   <p>{{ post.text|linebreaksbr }}</p>
               </article>
           {% endfor %}
+{% endblock %}
+{% block nextsection %}
+<div class= "row">
+  <button id= "ChangeColorofTitlesButton" class = "btn btn-secondary">Change Blog Titles</button>
+  <button id= "ChangeColorofMainTitleButton" class = "btn btn-secondary">Change Main Title</button>
+  <button id= "ScrollToTopButton" class = "btn btn-secondary">ScrollToTop</button>
+
+</div>
 {% endblock %}
