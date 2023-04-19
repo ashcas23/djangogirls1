@@ -10,8 +10,8 @@ function ChangeColorofPostTitles() { //defining a (JavaScript) function
   }
 }
 
-let ChangeColorofTitles = document.getElementById("ChangeColorofTitles");
-ChangeColorofTitles.addEventListener("click", ChangeColorofPostTitles); //if button is clicked the function gets called
+let ChangeColorofTitlesButton = document.getElementById("ChangeColorofTitlesButton");
+ChangeColorofTitlesButton.addEventListener("click", ChangeColorofPostTitles); //if button is clicked the function gets called
 
 function changeTitleColor() {
   let element = document.getElementById("titlelink");
@@ -21,8 +21,8 @@ function changeTitleColor() {
   element.style["border"] = "1px solid blue"
 }
 
-let ChangeColorofMainTitle = document.getElementById("ChangeColorofMainTitle");
-ChangeColorofMainTitle.addEventListener("click", changeTitleColor);
+let ChangeColorofMainTitleButton = document.getElementById("ChangeColorofMainTitleButton");
+ChangeColorofMainTitleButton.addEventListener("click", changeTitleColor);
 
 let ScrollToTopButton = document.getElementById("ScrollToTopButton");
 
